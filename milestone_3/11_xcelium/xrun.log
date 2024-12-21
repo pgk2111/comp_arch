@@ -1,0 +1,128 @@
+xrun(64): 23.09-s003: (c) Copyright 1995-2023 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	23.09-s003: Started on Dec 15, 2024 at 22:53:57 +07
+xrun
+	-access +rwc
+	-f ./flist
+		-sv
+		-timescale 1ns/100ps
+		./../00_src/adder.sv
+		./../00_src/address_decode.sv
+		./../00_src/alu.sv
+		./../00_src/bru.sv
+		./../00_src/BTB.sv
+		./../00_src/comparator4.sv
+		./../00_src/comparator32.sv
+		./../00_src/compare.sv
+		./../00_src/ctrl_unit.sv
+		./../00_src/detector.sv
+		./../00_src/Dmem.sv
+		./../00_src/EX_MEM_reg.sv
+		./../00_src/FullAdder.sv
+		./../00_src/hazard.sv
+		./../00_src/ID_EX_reg.sv
+		./../00_src/IF_ID_reg.sv
+		./../00_src/imem.sv
+		./../00_src/immgen.sv
+		./../00_src/input_p.sv
+		./../00_src/lsu.sv
+		./../00_src/MEM_WB_reg.sv
+		./../00_src/mux2.sv
+		./../00_src/mux2x1.sv
+		./../00_src/mux3x1.sv
+		./../00_src/mux4x1.sv
+		./../00_src/opcode_decode.sv
+		./../00_src/output_p.sv
+		./../00_src/pc.sv
+		./../00_src/predict2bit.sv
+		./../00_src/predict_gshare.sv
+		./../00_src/regfile.sv
+		./../00_src/shift.sv
+		./../00_src/shifter.sv
+		./../00_src/simple.sv
+		./../00_src/sra.sv
+		./../00_src/WB_reg.sv
+		./../00_src/singlecycle.sv
+		./../01_bench/tlib.svh
+		./../01_bench/driver.sv
+		./../01_bench/scoreboard.sv
+		./../01_bench/tbench.sv
+		+xmtop+tbench
+Recompiling... reason: unable to stat '/./earth/class/comparch/ee4423/ca210/Documents/singlecycle-test/00_src/BTB.sv'.
+	Elaborating the design hierarchy:
+		Caching library 'worklib' ....... Done
+xmelab: *W,CUVWSI (/earth/class/comparch/ee4423/ca210/Documents/singlecycle-test/01_bench/tbench.sv,42|24): 1 input port was not connected:
+xmelab: (/earth/class/comparch/ee4423/ca210/Documents/singlecycle-test/00_src/singlecycle.sv,9): i_io_btn
+
+	Top level design units:
+		$unit_0x493393ca
+		tbench
+	Building instance overlay tables: .................... Done
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                   Instances  Unique
+		Modules:                 674      38
+		Registers:              1521     372
+		Scalar wires:           4269       -
+		Expanded wires:          160       5
+		Vectored wires:          398       -
+		Always blocks:           525      41
+		Initial blocks:            6       6
+		Cont. assignments:       702      65
+		Pseudo assignments:     1122       -
+		Compilation units:         1       1
+		Process Clocks:           12       1
+		Simulation timescale:  100ps
+	Writing initial simulation snapshot: worklib.tbench:sv
+Loading snapshot worklib.tbench:sv .................... Done
+xcelium> source /tools/cadence/XCELIUM2309/tools/xcelium/files/xmsimrc
+xcelium> run
+TEST for SINGLECYCLE
+[     2400]:: 1::ADD...............PASSED
+[    13800]:: 2::SUB...............PASSED
+[    26000]:: 3::XOR...............PASSED
+[    37200]:: 4::OR................PASSED
+[    48600]:: 5::AND...............PASSED
+[    60000]:: 6::SLL...............PASSED
+[    69800]:: 7::SRL...............PASSED
+[    81000]:: 8::SRA...............PASSED
+[    91800]:: 9::SLT...............PASSED
+[   101800]::10::SLTU..............PASSED
+[   111800]::11::ADDI..............PASSED
+[   118800]::12::XORI..............PASSED
+[   125800]::13::ORI...............PASSED
+[   132600]::14::ANDI..............PASSED
+[   139000]::15::SLLI..............PASSED
+[   146000]::16::SRLI..............PASSED
+[   153800]::17::SRAI..............PASSED
+[   161800]::18::SLTI..............PASSED
+[   167600]::19::SLTIU.............PASSED
+[   173400]::20::LUI...............PASSED
+[   178600]::21::AUIPC.............PASSED
+[   182200]::22::LW................PASSED
+[   192000]::23::LH................PASSED
+[   199200]::24::LB................PASSED
+[   205600]::25::LHU...............PASSED
+[   213000]::26::LBU...............PASSED
+[   219400]::27::SW................PASSED
+[   224800]::28::SH................PASSED
+[   231800]::29::SB................PASSED
+[   238400]::30::misaligned........PASSED
+[   242600]::31::BEQ...............PASSED
+[   245400]::32::BNE...............PASSED
+[   248200]::33::BLT...............PASSED
+[   254000]::34::BGE...............PASSED
+[   260400]::35::BLTU..............PASSED
+[   266200]::36::BGEU..............PASSED
+[   272600]::37::JAL...............PASSED
+[   277400]::38::JALR..............PASSED
+[   282200]::39::illegal_insn......PASSED
+
+Timeout...
+
+DUT is considered	P A S S E D
+
+Simulation complete via $finish(1) at time 50 US + 0
+../01_bench/tlib.svh:22             $finish;
+xcelium> exit
+TOOL:	xrun(64)	23.09-s003: Exiting on Dec 15, 2024 at 22:54:00 +07  (total: 00:00:03)
